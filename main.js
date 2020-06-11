@@ -19,6 +19,18 @@ $(document).ready(function (){
     console.log(momentSold)
     sold += momentSold;
 
+    //data del venditore
+    var momentSalesman = momentData.salesman;
+    console.log(momentSalesman)
+    //data moment
+    moment.locale('it');
+    var now = moment(momentData[i].date, 'DD/MM/YYYY').format('MMMM');
+    console.log(now)
+
+
+    // parte l'if else
+    if()
+
   }
 
 },
@@ -93,10 +105,4 @@ $(document).ready(function (){
 //   'dicembre' : 0
 //
 // };
-// moment.locale('it');
-// var now = moment(data[i].date, 'DD/MM/YYYY').format('MMMM');
-// console.log(now)
-// var salesman  = month.salesman;
-// console.log(salesman)
-// var amount = month.amount;
-// console.log
+//
