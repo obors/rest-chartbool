@@ -9,27 +9,58 @@ $(document).ready(function (){
     var sold = 0 ; //var venduto
     var salesman = {}; //var venditore
 
+    //data moment
+    // moment.locale('it');
+    // var now = moment(momentData[i].date, 'DD/MM/YYYY').format('MMMM');
+    // console.log(now)
+
+    var month = {
+      'gennaio' : 0,
+      'febbraio' : 0,
+      'marzo' : 0,
+      'aprile' : 0,
+      'maggio' : 0,
+      'giugno' : 0,
+      'luglio' : 0,
+      'agosto' : 0,
+      'settembre' : 0,
+      'ottobre' : 0,
+      'novembre' : 0,
+      'dicembre' : 0
+
+  };
+
+
     //ciclo for per recupero data dal response
     for (var i = 0; i < data.length; i++) {
     var momentData = data[i];
-    console.log(momentData);
 
     // data venduto per
     var momentSold = momentData.amount;
-    console.log(momentSold)
+    // console.log(momentSold)
     sold += momentSold;
 
     //data del venditore
     var momentSalesman = momentData.salesman;
-    console.log(momentSalesman)
-    //data moment
-    moment.locale('it');
-    var now = moment(momentData[i].date, 'DD/MM/YYYY').format('MMMM');
-    console.log(now)
+
+
+
 
 
     // parte l'if else
-    if()
+    if(!sales.hasOwnProperty(data)){
+      sales[data] = momentSold;
+
+    }else {
+      sales[data] += momentSold
+
+    }if (!salesman.hasOwnProperty()){
+      salesman += momentSalesman;
+      console.log(salesman, sales)
+    }else{
+      salesman += momentSold
+
+    }
 
   }
 
